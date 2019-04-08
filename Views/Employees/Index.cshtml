@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NetworkHairdressing.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div>
+    @using (Ajax.BeginForm("EmployeesSearch", new AjaxOptions { UpdateTargetId = "results"}))
+    {
+        <input type="text" name="id" />
+        <input type="submit" value="Search" />
+    }
+    <div id="results"></div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <div class="alert alert-success">
+                    <a href="/EmployeeWorks/EmployeeWorksSearch/@item.Id">@item.Fullname</a>
+                </div>
+            </td>
+            <td>
+                @{
+                    var base64 = Convert.ToBase64String(item.Image);
+                    var imgSrc = $"data:image/gif;base64,{base64}";
+                }
+                <img src="@imgSrc" alt="" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")

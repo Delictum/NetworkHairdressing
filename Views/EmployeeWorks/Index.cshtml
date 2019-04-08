@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NetworkHairdressing.Models.EmployeeWork>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div class="alert alert-success">
+                <a href="/Employees/EmployeeWorksSearch/@item.EmployeeId">Author</a>
+            </div>
+        </td>
+        <td>
+            @{
+                var base64 = Convert.ToBase64String(item.Image);
+                var imgSrc = $"data:image/gif;base64,{base64}";
+            }
+            <img src="@imgSrc" alt="" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

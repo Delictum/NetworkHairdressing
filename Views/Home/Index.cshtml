@@ -1,0 +1,26 @@
+﻿@using NetworkHairdressing.Models
+@model IEnumerable<Barbershop>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="Headerwrap">
+    <div class="container-fluid table_price">
+        <div class="row centered btn-block">
+            <a href='Home/Info' type="button" class="btn btn-secondary">Info</a>
+            <a href='Home/Price' type="button" class="btn btn-secondary">Price</a>
+            
+            <p>Barbershops:</p>
+            @foreach (var b in Model)
+            {
+                <div class="alert alert-info">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="/Employees/EmployeesSearch/@b.Id">@b.Name</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

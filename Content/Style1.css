@@ -1,0 +1,304 @@
+body{
+background-color:#f2f2f2;
+font-family:"lato";
+font-weight: 300;
+font-size: 16px;
+color: #555;
+-webkit-font-smoothing: antialiased;
+-webkit-overflow-scrolling: touch;
+margin-top: 70px;
+}
+
+p{
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #f2f2f2; 
+}
+
+.centered{
+    text-align: center;
+}
+
+.navbar{
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+    
+    .navbar{
+        background: #555;
+    }
+    
+    hr{
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px  solid #ccc;
+        margin: 1em 0;
+        padding: 0;   
+    }
+  
+    .kolonka1{
+    height: 1000px;
+    background: url(../Диплом/Photo1.jpg) no-repeat center top;
+    background-attachment: relative;
+    background-position: center center;
+    -webkit-background-size: cover;
+    color: whitesmoke;
+    font-size: 25px;
+  }
+  
+  .kolonka2{
+    height: 1000px;
+
+    background: url(../Диплом/Photo3.jpg) no-repeat center top;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    -webkit-background-size: cover;
+    color: whitesmoke;
+    font-size: 25px;
+  }
+ 
+  .kolonka3{
+    height: 1000px;
+    background: url(../Диплом/Photo2.jpg) no-repeat center top;
+    background-attachment: relative;
+    background-position: center center;
+    -webkit-background-size: cover;
+    color: whitesmoke;
+    font-size: 25px; 
+  }
+
+  .niz{
+      background-color: #555;
+      height: 30px ;
+      text-align: center;
+  }
+
+  .fa-1x{
+    padding-left: 5px;
+}
+
+.niz2{
+    background-color: #555;
+    height: 30px ;
+    text-align: center;
+}
+
+.niz3{
+    background-color: #555;
+    height: 30px ;
+    text-align: center ;
+}
+
+.link{
+ color: #f2f2f2;
+ text-decoration: none;
+}
+
+.link:hover { 
+    color: black; 
+    }
+
+    .niz4 {
+        height: 200px;
+        background: url(../Диплом/Photo4.jpg) no-repeat center top;
+
+        background-position: center center;
+        -webkit-background-size: cover;
+
+
+    }
+
+    .kk1{
+        height: 2200px;
+        background: url(../Диплом/Photo1.jpg) no-repeat center top;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+      }
+      
+      .kk2{
+        height: 2200px;
+    
+        background-color: #1e1c1d;
+        text-align: center;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+      }
+     
+      .kk3{
+        height: 2200px;
+        background: url(../Диплом/Photo2.jpg) no-repeat center top;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+      }
+
+      th {
+        font-weight: normal;
+        color: #039;
+        padding: 10px 125px;
+        text-align: center;
+      }
+      td {
+        color: #669;
+        border-top: 1px solid #e8edff;
+        padding: 10px 125px;
+        width: 100%;
+        max-width: 100%;
+        
+      }
+      tr:hover td {background: #e8edff;}
+
+      .tablica{
+          padding
+      }
+
+
+       }
+      .table_price  {
+        height: 10px;
+        background-color: #555;
+
+
+    }
+ 
+      
+      
+      
+      
+      
+      
+      .kkk1{
+        height: 800px;
+        background: url(../Диплом/Photo1.jpg) no-repeat center top;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+        
+      }
+      .kkk2{
+        height: 800px;
+    
+        background-color: #1e1c1d;
+        text-align: center;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+        
+    
+      }
+      .kkk3{
+        height: 800px;
+        background: url(../Диплом/Photo2.jpg) no-repeat center top;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+      }
+
+      .kkkk1{
+        height: 50px;
+        background-color: #1e1c1d;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+        
+      }
+      .kkkk2{
+        height: 1000px;
+    
+        background-color: #1e1c1d;
+        text-align: center;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+        
+    
+      }
+      .kkkk3{
+        height: 1000px;
+        background: url(../Диплом/Photo2.jpg) no-repeat center top;
+        background-attachment: relative;
+        background-position: center center;
+        -webkit-background-size: cover;
+        color: whitesmoke;
+        font-size: 25px;
+        
+      }
+
+      .s1{
+        background-color: #ccc;
+        height: 400px;
+    }
+    .s2{
+        background-color: #111111;
+        height: 400px;
+    }
+    .s3{
+        background-color: #222222;
+        height: 400px;
+    }
+    .s4{
+        background-color: #333333;
+        height: 400px;
+    }
+    .s5{
+        background-color: #444444;
+        height: 400px;
+    }
+    .s6{
+        background-color: #555555;
+        height: 400px;
+    }
+    .s7{
+        background-color: #666666;
+        height: 400px;
+    }
+    .s8{
+        background-color: #777777;
+        height: 400px;
+    }
+    .s9{
+        background-color: #888888;
+        height: 400px;
+    }
+    .s10{
+        background-color: #866b6b;
+        height: 400px;
+    }
+    .s11{
+        background-color: #9e2f2f;
+        height: 400px;
+    }
+    .s12{
+        background-color: #23cfaa;
+        height: 400px;
+    }
+
+    .kkkkk1{
+        height: 100px;
+
+        background-color: #1e1c1d;
+
+        
+      }

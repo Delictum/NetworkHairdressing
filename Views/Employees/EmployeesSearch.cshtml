@@ -1,0 +1,34 @@
+﻿@model IEnumerable<NetworkHairdressing.Models.Employee>
+
+@if (!Model.Any())
+{
+    <h4>The hairdresser has no work yet.</h4>
+}
+else
+{
+    <div id="searchresults">
+        <h3>Employees: </h3>
+        <ul>
+            @foreach (var item in Model)
+            {
+            <li>
+                <div class="alert alert-success">
+                    <a href="/EmployeeWorks/EmployeeWorksSearch/@item.Id">@item.Fullname</a>
+                </div>
+
+                    @{
+                        var base64 = Convert.ToBase64String(item.Image);
+                        var imgSrc = $"data:image/gif;base64,{base64}";
+                    }
+                    <br />
+                    <img src="@imgSrc" alt="" />
+
+            </li>
+            }
+        </ul>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
