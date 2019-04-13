@@ -1,0 +1,154 @@
+﻿@using NetworkHairdressing.Models
+@model NetworkHairdressing.Models.TimeSheetView
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TimeSheet</h4>
+    <hr />
+
+    <table class="legend">
+        <tr>
+            @foreach (var jobStatus in ViewBag.JobStatus)
+            {
+                <th class="legend">
+                    @jobStatus
+                </th>
+            }
+        </tr>
+    </table>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeSheet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeSheet.Name)
+        </dd>
+    </dl>
+    
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => Model.TimeSheet.Id)
+    @Html.HiddenFor(x => Model.TimeSheet.Name)
+
+    <table>
+        <tr>
+            <th>
+                Работник
+            </th>
+            @for (var j = 1; j < Model.NumberOfDays; j++)
+            {
+                <th>
+                    @j
+                </th>
+            }
+        </tr>
+
+        @foreach (var line in Model.Text)
+        {
+            <tr>
+                @foreach (var dict in line)
+                {
+                    <td>
+                        <input type="hidden" name="employees" value=@dict.Key.Id />
+                        @Html.ActionLink(dict.Key.Fullname, "Details", "Employees", new {id = dict.Key.Id}, null)
+                    </td>
+
+                    for (var i = 0; i < dict.Value.Count - 1; i++)
+                    {
+                        <td>
+                            
+                            @if (dict.Value[i] == JobStatus.в)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option selected="selected" value="в">в</option>
+                                    <option value="р">р</option>
+                                    <option value="у">у</option>
+                                    <option value="о">о</option>
+                                    <option value="б">б</option>
+                                    <option value="з">з</option>
+                                </select>
+                            }
+                            @if (dict.Value[i] == JobStatus.б)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option value="в">в</option>
+                                    <option value="р">р</option>
+                                    <option value="у">у</option>
+                                    <option value="о">о</option>
+                                    <option selected="selected" value="б">б</option>
+                                    <option value="з">з</option>
+                                </select>
+                            }
+                            @if (dict.Value[i] == JobStatus.з)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option value="в">в</option>
+                                    <option value="р">р</option>
+                                    <option value="у">у</option>
+                                    <option value="о">о</option>
+                                    <option value="б">б</option>
+                                    <option selected="selected" value="з">з</option>
+                                </select>
+                            }
+                            @if (dict.Value[i] == JobStatus.о)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option value="в">в</option>
+                                    <option value="р">р</option>
+                                    <option value="у">у</option>
+                                    <option selected="selected" value="о">о</option>
+                                    <option value="б">б</option>
+                                    <option value="з">з</option>
+                                </select>
+                            }
+                            @if (dict.Value[i] == JobStatus.р)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option value="в">в</option>
+                                    <option selected="selected" value="р">р</option>
+                                    <option value="у">у</option>
+                                    <option value="о">о</option>
+                                    <option value="б">б</option>
+                                    <option value="з">з</option>
+                                </select>
+                            }
+                            @if (dict.Value[i] == JobStatus.у)
+                            {
+                                <select name="jobStatuses" asp-for="JobStatus" asp-items="Html.GetEnumSelectList<JobStatus>()">
+                                    <option selected="selected" value="в">в</option>
+                                    <option value="р">р</option>
+                                    <option selected="selected" value="у">у</option>
+                                    <option value="о">о</option>
+                                    <option value="б">б</option>
+                                    <option value="з">з</option>
+                                </select>
+                            }
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+    <br/>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

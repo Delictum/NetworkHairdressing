@@ -16,6 +16,20 @@
     white-space: normal;
 }
 
+table
+.legend{
+    border: 1px solid #69c;
+    border-collapse: separate;
+    empty-cells: hide;
+    width: 200px;
+
+}
+th, td
+.legend {
+    border: 2px solid #69c;
+}
+
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

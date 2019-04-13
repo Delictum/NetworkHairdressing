@@ -1,0 +1,42 @@
+﻿@model NetworkHairdressing.Models.TimeSheet
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>TimeSheet</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div style="position:relative;">
+        <label>Файл</label>
+  
+        <a class='btn' href='javascript:;'>
+            Выберите файл...
+            <input type="file" name="upimage" size="40"
+                   style="position:absolute;z-index:2;top:0;
+                                                                                                  left:0;filter: alpha(opacity=0); opacity:0;
+                                                                                                  background-color:transparent;color:transparent;"
+                   onchange='$("#upload-file-info").html($(this).val());'>
+        </a>
+        <span class='label label-info' id="upload-file-info"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

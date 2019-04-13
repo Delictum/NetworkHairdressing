@@ -107,3 +107,6 @@ C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\Ne
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csproj.CopyComplete
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.dll
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.pdb
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.InitialCreate.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csproj.GenerateResource.cache
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.CreateTableSheet.resources
