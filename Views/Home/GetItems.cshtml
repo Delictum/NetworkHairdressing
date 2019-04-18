@@ -1,0 +1,9 @@
+﻿@model System.Collections.Generic.List<NetworkHairdressing.Models.Employee>
+
+<select id="employee" name="Employee">
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Fullname</option>
+    }
+</select>
+<label id="timeWorks" style="font-style: italic"></label>

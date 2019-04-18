@@ -16,25 +16,26 @@
     white-space: normal;
 }
 
-table
-.legend{
-    border: 1px solid #69c;
-    border-collapse: separate;
-    empty-cells: hide;
-    width: 200px;
-
-}
-th, td
-.legend {
-    border: 2px solid #69c;
-}
-
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+table {
+    border: 1px solid #111111
+}
+.legend {
+    border: 1px solid #69c;
+    border-collapse: separate;
+    empty-cells: hide;
+    width: 200px;
+}
+
+th, td
+.legend {
+    border: 2px solid #69c;
 }
 
 body {
@@ -176,25 +177,6 @@ hr {
     -webkit-background-size: cover;
     color: whitesmoke;
     font-size: 25px;
-}
-
-th {
-    font-weight: normal;
-    color: #039;
-    padding: 10px 125px;
-    text-align: center;
-}
-
-td {
-    color: #669;
-    border-top: 1px solid #e8edff;
-    padding: 10px 125px;
-    width: 100%;
-    max-width: 100%;
-}
-
-tr:hover td {
-    background: #e8edff;
 }
 
 .tablica {

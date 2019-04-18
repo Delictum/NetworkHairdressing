@@ -1,0 +1,67 @@
+﻿@model List<NetworkHairdressing.Models.Reception>
+
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Записаться", "Record")
+</p>
+
+
+    
+@if (Model == null)
+{
+    <p>Вы еще ни разу не записывались. Самое время это сделать :)</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                Услуга
+            </th>
+            <th>
+                Парикмахер
+            </th>
+            <th>
+                Стоимость
+            </th>
+            <th>
+                Дата
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="alert alert-success">
+                        <a href="../Prices/Details/@item.PriceId">@item.Price.Name</a>
+                    </div>
+                </td>
+                <td>
+                    <a href="../Employees/Details/@item.EmployeeId">@item.Employee.Fullname</a>
+                </td>
+                <td>
+                    @item.Price.Cost
+                </td>
+                <td>
+                    @item.DateTime
+                </td>
+                <td>
+                    @if (item.DateTime > DateTime.Now.AddHours(-1))
+                    {
+                        @Html.ActionLink("Отменить заявку", "Unsubscribe", new { id = item.Id }, null)
+                    }
+                </td>
+            </tr>
+
+        }
+    </table>
+}
+
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")

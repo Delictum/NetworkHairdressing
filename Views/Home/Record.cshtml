@@ -1,0 +1,144 @@
+﻿@model NetworkHairdressing.Models.ReceptionViewModels
+
+@{
+    ViewBag.Title = "Запись";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Запись</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("Выберите парикмахерскую", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("Barbershop", Model.ListBarbershops, htmlAttributes: new { @class = "form-control", id = "barbershop", name = "Barbershop" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Выберите парикмахера", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("Employee", Model.ListEmployees, htmlAttributes: new { @class = "form-control", id = "employee", name = "Employee" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Выберите услугу", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("Price", Model.ListPrices, htmlAttributes: new { @class = "form-control", id = "price", name = "Price" })
+                <label id="priceCost" style="font-style: italic"></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Reception.DateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Reception.DateTime, new { htmlAttributes = new { @class = "form-control", id = "dateField" } })
+                @Html.ValidationMessageFor(model => model.Reception.DateTime, "", new { @class = "text-danger" })
+                <label id="worksDay" style="font-style: italic">Работа парикмахерской с 8 до 20. Воскресенье выходной</label>
+            </div>
+        </div>
+        
+        @if (ViewBag.Error != null && ViewBag.Error != "")
+        {
+            <p><textarea style="background-color: crimson" name="comment" readonly>@ViewBag.Error</textarea></p>
+        }
+        
+        @if (ViewBag.Success != null)
+        {
+            <p style="background-color: greenyellow">@ViewBag.Success</p>
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Записаться" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("На главную", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/themes/base")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    <script type="text/javascript">
+        $(function() {
+
+            $("#barbershop").change(function() {
+                var id = $(this).val();
+                $("#timeWorks").hide = true;
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetItems")/' + id,
+                    success: function(data) {
+                        $('#employee').replaceWith(data);
+                    }
+                });
+
+                if (id === "3") {
+                    $("#worksDay").text("Работа парикмахерской с 8 до 20. Воскреснье с 8 до 18");
+                } else {
+                    $("#worksDay").text("Работа парикмахерской с 8 до 20. Воскресенье выходной");
+                }
+            });
+
+            $('#price').change(function() {
+                $.ajax({
+                    url: 'http://url.to.the.database.page',
+                    type: 'POST',
+                    dataType: 'Json',
+                    data: {
+                        price: $(this).val()
+                    },
+                    url: '@Url.Action("GetPrice", "Home")',
+                    success: function (da) {
+                        $("#priceCost").text(da.Price + " р.");
+                    },
+                    error: function (da) {
+                        alert('Error');
+                    }
+                });
+            });
+
+            $(function () {
+                var ru = $("#dateField")
+                    .datetimepicker({
+                        changeMonth: true,
+                        dateFormat: 'dd-M-yy',
+                        controlType: 'select',
+                        timeFormat: 'hh:mm tt',
+                        oneLine: true,
+                        stepMinute: 10,
+                        minDate: 1,
+                        maxDate: 10,
+                        daysOfWeekDisabled: [0, 1]
+
+                    })
+                    .get(0).setAttribute("type", "text").regional['ru'];
+            });
+
+            jQuery.validator.methods.date = function (value, element) {
+                var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+                if (isChrome) {
+                    var d = new Date();
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
+                } else {
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
+                }
+            };
+
+        });
+    </script>
+}

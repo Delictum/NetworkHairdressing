@@ -9,8 +9,9 @@
 <div id="Headerwrap">
     <div class="container-fluid table_price">
         <div class="row centered btn-block">
-            <a href='Home/Info' type="button" class="btn btn-secondary">Info</a>
-            <a href='Home/Price' type="button" class="btn btn-secondary">Price</a>
+            @Html.ActionLink("Информация", "Info")
+            @Html.ActionLink("Запись онлайн", "Record")
+            @Html.ActionLink("Прайс-лист", "Index", "Prices")
 
             <p>Barbershops:</p>
             @foreach (var b in Model)

@@ -25,6 +25,23 @@ namespace NetworkHairdressing
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                "~/Scripts/jquery-ui-1.12.1.js",
+                "~/Scripts/jquery-ui-timepicker-addon.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+                "~/Content/themes/base/accordion.css",
+                "~/Content/themes/base/all.css",
+                "~/Content/themes/base/base.css",
+                "~/Content/themes/base/button.css",
+                "~/Content/themes/base/theme.css",
+                "~/Content/themes/base/menu.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/base").Include(
+                "~/Content/themes/base/jquery-ui.css",
+                "~/Content/jquery-ui-timepicker-addon.min.css",
+                "~/Content/jquery-ui-timepicker-addon.css"));
         }
     }
 }

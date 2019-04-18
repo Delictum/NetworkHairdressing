@@ -35,6 +35,7 @@ namespace NetworkHairdressing.Controllers
         }
 
         // GET: Employees/Create
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +46,7 @@ namespace NetworkHairdressing.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Create(Employee employee, HttpPostedFileBase upimage = null)
         {
             if (!ModelState.IsValid)
@@ -69,6 +71,7 @@ namespace NetworkHairdressing.Controllers
         }
 
         // GET: Employees/Edit/5
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,6 +91,7 @@ namespace NetworkHairdressing.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(Employee employee, HttpPostedFileBase upimage = null)
         {
             if (!ModelState.IsValid)
@@ -112,6 +116,7 @@ namespace NetworkHairdressing.Controllers
         }
 
         // GET: Employees/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -129,6 +134,7 @@ namespace NetworkHairdressing.Controllers
         // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Employee employee = db.Employees.Find(id);

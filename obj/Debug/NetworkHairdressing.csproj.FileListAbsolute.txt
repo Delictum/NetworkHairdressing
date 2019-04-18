@@ -102,7 +102,6 @@ C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Microsof
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csprojAssemblyReference.cache
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csproj.CoreCompileInputs.cache
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csproj.CopyComplete
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.dll
@@ -110,3 +109,12 @@ C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\Ne
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.InitialCreate.resources
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csproj.GenerateResource.cache
 C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.CreateTableSheet.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.CreateReceptionAndPrice.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.ChangePrice.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.AddClassesInModels.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.csprojAssemblyReference.cache
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.ChangeEmployee.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\obj\Debug\NetworkHairdressing.Migrations.ChangeTypeUserId.resources
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Quartz.dll
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Quartz.pdb
+C:\Users\thedr\source\repos\NetworkHairdressing\NetworkHairdressing\bin\Quartz.xml

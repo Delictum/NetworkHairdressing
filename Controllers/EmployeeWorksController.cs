@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using NetworkHairdressing.Models;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using NetworkHairdressing.Models;
 
 namespace NetworkHairdressing.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class EmployeeWorksController : Controller
     {
         private NetworkHairdressingContext db = new NetworkHairdressingContext();

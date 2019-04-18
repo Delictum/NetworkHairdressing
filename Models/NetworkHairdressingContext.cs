@@ -8,6 +8,8 @@ namespace NetworkHairdressing.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeWork> EmployeeWorks { get; set; }
 
-        public System.Data.Entity.DbSet<NetworkHairdressing.Models.TimeSheet> TimeSheets { get; set; }
+        public DbSet<TimeSheet> TimeSheets { get; set; }
+        public DbSet<Price> Prices { get; set; }
+        public DbSet<Reception> Receptions { get; set; }
     }
 }

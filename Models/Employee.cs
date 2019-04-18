@@ -1,6 +1,4 @@
-﻿using System.Web.UI.WebControls;
-
-namespace NetworkHairdressing.Models
+﻿namespace NetworkHairdressing.Models
 {
     public class Employee
     {
@@ -8,5 +6,8 @@ namespace NetworkHairdressing.Models
         public string Fullname { get; set; }
         public int BarbershopId { get; set; }
         public byte[] Image { get; set; }
+        public bool IsFirstShift { get; set; }
+
+        public Barbershop Barbershop { get; set; }
     }
 }

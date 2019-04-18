@@ -34,6 +34,10 @@
                     {
                         <li>@Html.ActionLink("Табель", "Index", "TimeSheets")</li>
                     }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Мои заявки", "MyRecords", "Home")
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
